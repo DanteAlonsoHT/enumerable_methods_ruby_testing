@@ -93,4 +93,16 @@ describe Enumerable do
             expect(path_test.my_none? { |name| name.length > 0 }).to eql (path_test.none? { |name| name.length > 0 })
         end
     end
+
+    describe '#my_map' do
+        it "returns the same class when no block was given" do
+            expect(array_test.my_map.class).to eql (array_test.map.class)
+        end
+        it "returns transformed array when array was given" do
+            expect(array_test.compact.my_map { |i| i**2 }).to eql (array_test.compact.map { |i| i**2 })
+        end
+        it "returns transformed range when range was given" do
+          expect(range_test.my_map { |i| i * 2 }).to eql (range_test.map { |i| i * 2 }) 
+        end
+    end
 end
