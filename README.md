@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Advanced Building Blocks - Bubble Sort
+# Enumerable Methods
 
 > In this project, I've implemented my own enumerable methods creating these functions from scratch using Ruby, I expect you can see how the logic of each one method used in this project works individually.
 
@@ -19,12 +19,13 @@ If you want to see how should be the result for each method inside _enumerable_m
 ### Install
 
 To get a local copy up and running follow these simple example steps.
+
 - Open terminal
 - Clone this project by command git clone https://github.com/DanteAlonsoHT/enumerable_methods_ruby.git
 - Cd enumerable_methods_ruby folder
 - Run enumerable_methods_ruby.rb with Ruby in your terminal
 
-## Getting Started 
+## Getting Started
 
 - In enumerable_methods_ruby.rb file is the main to run the two functions to sort arrays.
 - I've included linters to improve and cleaning the Ruby code.
@@ -46,6 +47,12 @@ To get a local copy up and running follow these simple example steps.
 - Twitter: [@dante_dante1](https://twitter.com/dante_dante1)
 - LinkedIn: [Dante Alonso](https://www.linkedin.com/in/dante-hernandez99/)
 
+👤 **Mario Rodriguez**
+
+- GitHub: [@mariordgez](https://github.com/mariordgez)
+- Twitter: [@MarioRo75396624](https://twitter.com/MarioRo75396624)
+- LinkedIn: [Mario](https://www.linkedin.com/in/mario-alberto-rodriguez-cota-a2860a205/)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
@@ -55,7 +62,6 @@ Feel free to check the [issues page](https://github.com/DanteAlonsoHT/enumerable
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
 
 ## Acknowledgments
 
