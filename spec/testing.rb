@@ -63,4 +63,19 @@ describe Enumerable do
             expect(path_test.my_all?(/something/)).to eql (path_test.all?(/something/))
         end
     end
+
+    describe '#my_any' do
+        it "returns the same class when no block was given" do
+            expect(array_test.my_any?.class).to eql (array_test.any?.class)
+        end
+        it "returns true when array at least one condition was accomplished" do
+            expect(array_test.my_any? { |i| i > 0 }).to eql (array_test.any? { |i| i > 0 })
+        end
+        it "returns false when nil was given" do
+            expect(array_test.push(nil).my_any?).to eql (array_test.push(nil).any?)
+        end
+        it "returns true when at least one was accomplished using the regular expression" do
+            expect(path_test.my_any?(/something/)).to eql (path_test.any?(/something/))
+        end
+    end
 end
