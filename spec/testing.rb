@@ -105,4 +105,19 @@ describe Enumerable do
           expect(range_test.my_map { |i| i * 2 }).to eql (range_test.map { |i| i * 2 }) 
         end
     end
+
+    describe '#my_count' do
+        it "returns the same class when no block was given" do
+            expect(array_test.my_count.class).to eql (array_test.count.class)
+        end
+        it "returns new array with different values when array was given" do
+            expect(array_test.compact.my_count { |i| i**2 }).to eql (array_test.compact.count { |i| i**2 })
+        end
+        it "returns new array with different when range was given" do
+          expect(range_test.my_count { |i| i * 2 }).to eql (range_test.count { |i| i * 2 }) 
+        end
+        it "returns new array when hash was given" do
+            expect(hash_test.my_count do |key, value| end).to eql (hash_test.count do |key, value| end) 
+        end
+    end
 end
