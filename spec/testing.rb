@@ -126,4 +126,10 @@ describe Enumerable do
           expect(range_test.my_inject { |i| i * 2 }).to eql (range_test.inject { |i| i * 2 }) 
         end
     end
+
+    describe '#multiply_els' do
+        it "returns multiplied values when range was given" do
+          expect(multiply_els(array_test.compact)).to eql (0)
+        end
+    end
 end
