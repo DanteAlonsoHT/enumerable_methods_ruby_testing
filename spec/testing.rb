@@ -120,4 +120,10 @@ describe Enumerable do
             expect(hash_test.my_count do |key, value| end).to eql (hash_test.count do |key, value| end) 
         end
     end
+
+    describe '#my_inject' do
+        it "returns a value when range was given" do
+          expect(range_test.my_inject { |i| i * 2 }).to eql (range_test.inject { |i| i * 2 }) 
+        end
+    end
 end
