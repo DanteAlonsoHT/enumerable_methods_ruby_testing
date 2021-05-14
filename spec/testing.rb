@@ -45,4 +45,22 @@ describe Enumerable do
             expect(symbol_test.my_select { |i| i == :sym1 }).to eql (symbol_test.select { |i| i == :sym1 }) 
         end
     end
+
+    describe '#my_all' do
+        it "returns the same class when no block was given" do
+            expect(array_test.my_all?.class).to eql (array_test.all?.class)
+        end
+        it "returns true when array was given and the condition was accomplished" do
+            expect(array_test.my_all? { |i| i > 0 }).to eql (array_test.all? { |i| i > 0 })
+        end
+        it "returns false when nil was given" do
+            expect(array_test.push(nil).my_all?).to eql (array_test.push(nil).all?)
+        end
+        it "returns true when all data types was the same" do
+            expect(array_test.my_all?(Numeric)).to eql (array_test.all?(Numeric))
+        end
+        it "returns true when all words accomplished the regular expression" do
+            expect(path_test.my_all?(/something/)).to eql (path_test.all?(/something/))
+        end
+    end
 end
