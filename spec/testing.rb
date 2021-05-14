@@ -18,4 +18,16 @@ describe Enumerable do
             expect(hash_test.my_each do |key, value| end).to eql (hash_test.each do |key, value| end) 
         end
     end
+
+    describe '#my_each_with_index' do
+        it "returns the same class when no block was given" do
+            expect(array_test.my_each_with_index.class).to eql array_test.each_with_index.class  
+        end
+        it "returns when array was given" do
+            expect(array_test.my_each_with_index do |i| end).to eql (array_test.each_with_index do |i| end)
+        end
+        it "returns when hash was given" do
+          expect(hash_test.my_each_with_index do |key, value| end).to eql (hash_test.each_with_index do |key, value| end) 
+        end
+    end
 end
