@@ -30,4 +30,19 @@ describe Enumerable do
           expect(hash_test.my_each_with_index do |key, value| end).to eql (hash_test.each_with_index do |key, value| end) 
         end
     end
+
+    describe '#my_select' do
+        it "returns the same class when no block was given" do
+            expect(array_test.my_select.class).to eql array_test.select.class  
+        end
+        it "returns when array was given" do
+            expect(array_test.my_select(&:odd?)).to eql (array_test.select(&:odd?))
+        end
+        it "returns when range was given" do
+          expect(range_test.my_select(&:even?)).to eql (range_test.select(&:even?)) 
+        end
+        it "returns when symbol was given" do
+            expect(symbol_test.my_select { |i| i == :sym1 }).to eql (symbol_test.select { |i| i == :sym1 }) 
+        end
+    end
 end
