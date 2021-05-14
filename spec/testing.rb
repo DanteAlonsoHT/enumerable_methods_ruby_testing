@@ -78,4 +78,19 @@ describe Enumerable do
             expect(path_test.my_any?(/something/)).to eql (path_test.any?(/something/))
         end
     end
+
+    describe '#my_none' do
+        it "returns the same class when no block was given" do
+            expect(array_test.my_none?.class).to eql (array_test.none?.class)
+        end
+        it "returns true when array if block doesn't return true for each one element" do
+            expect(array_test.my_none? { |i| i > 0 }).to eql (array_test.none? { |i| i > 0 })
+        end
+        it "returns true when none was accomplished using the regular expression" do
+            expect(path_test.my_none?(/something/)).to eql (path_test.none?(/something/))
+        end
+        it "returns true when block doesn't return true for each one" do
+            expect(path_test.my_none? { |name| name.length > 0 }).to eql (path_test.none? { |name| name.length > 0 })
+        end
+    end
 end
