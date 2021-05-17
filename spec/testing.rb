@@ -21,9 +21,7 @@ describe Enumerable do
     end
 
     it 'returns when hash was given' do
-      expect(hash_test.my_each { |key, value| print "#{key}, #{value}" }).to
-
-      eql(hash_test.each { |key, value| print "#{key}, #{value}" })
+      expect(hash_test.my_each { |key, _value| print key.to_s }).to eql(hash_test.each { |key, _value| print key.to_s })
     end
   end
 
@@ -37,9 +35,11 @@ describe Enumerable do
     end
 
     it 'returns when hash was given' do
-      expect(hash_test.my_each_with_index { |key, value| print "#{key}, #{value}" }).to
-
-      eql(hash_test.each_with_index { |key, value| print "#{key}, #{value}" })
+      expect(hash_test.my_each_with_index do |key, _value|
+               print key.to_s
+             end).to eql(hash_test.each_with_index do |key, _value|
+                           print key.to_s
+                         end)
     end
   end
 
@@ -147,9 +147,9 @@ describe Enumerable do
     end
 
     it 'returns new array when hash was given' do
-      expect(hash_test.my_count { |key, value| print "#{key}, #{value}" }).to
-
-      eql(hash_test.count { |key, value| print "#{key}, #{value}" })
+      expect(hash_test.my_count { |key, _value| print key.to_s }).to eql(hash_test.count do |key, _value|
+                                                                           print key.to_s
+                                                                         end)
     end
   end
 
